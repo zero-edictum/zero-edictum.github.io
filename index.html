@@ -2,13 +2,139 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Zero Edictum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO EDICTUM | Terminnus-Zero</title>
     <style>
-        body { background: #000; color: #0f0; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .terminal { border: 1px solid #0f0; padding: 20px; box-shadow: 0 0 10px #0f0; }
+        /* Основні стилі */
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: 'Courier New', monospace; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Твоя фонова "чорна діра" */
+        .bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: url('bg.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5; /* Приглушена яскравість для фокусу на тексті */
+            filter: contrast(110%) brightness(70%);
+        }
+
+        /* Контейнер з контентом */
+        .content {
+            text-align: center;
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid #333;
+            box-shadow: 0 0 30px rgba(0,0,0,1);
+            border-radius: 2px;
+        }
+
+        h1 { 
+            letter-spacing: 7px; 
+            color: #fff; 
+            text-transform: uppercase; 
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+
+        .author { 
+            color: #666; 
+            margin-bottom: 30px; 
+            font-size: 0.8em; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p { 
+            color: #bbb; 
+            line-height: 1.6; 
+            font-size: 1em; 
+            margin-bottom: 40px;
+        }
+
+        /* Кнопки */
+        .btn-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            width: 100%; 
+        }
+
+        .btn {
+            padding: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s all ease;
+            border: 1px solid;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+
+        /* Кнопка завантаження */
+        .btn-main { 
+            background: #fff; 
+            color: #000; 
+            border-color: #fff; 
+        }
+        .btn-main:hover { 
+            background: #ff3e3e; 
+            border-color: #ff3e3e; 
+            color: #fff; 
+            box-shadow: 0 0 15px rgba(255, 62, 62, 0.4);
+        }
+
+        /* Кнопка підтримки (Ko-fi) */
+        .btn-sub { 
+            background: transparent; 
+            color: #00aff0; /* Колір Ko-fi або залиш золото #ffdd00 */
+            border-color: #00aff0; 
+        }
+        .btn-sub:hover { 
+            background: #00aff0; 
+            color: #fff; 
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.7em;
+            color: #444;
+        }
     </style>
 </head>
 <body>
-    <div class="terminal">> Zero Edictum: Terminal Point Reached.</div>
+
+    <div class="bg-container"></div>
+
+    <div class="content">
+        <h1>Zero Edictum</h1>
+        <div class="author">by Terminnus-Zero</div>
+        
+        <p>Юридична позиція щодо недопустимості повторного складання військової присяги. <br> 
+           <strong>Остаточний аргумент.</strong></p>
+
+        <div class="btn-group">
+            <a href="legal-knockout.pdf" class="btn btn-main" target="_blank">Завантажити Едикт (PDF)</a>
+            
+            <a href="https://ko-fi.com/edictum" class="btn btn-sub" target="_blank">Підтримати проект ☕</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024-2026 Terminnus-Zero. Всі права захищені правом на самозахист.
+    </footer>
+
 </body>
 </html>
